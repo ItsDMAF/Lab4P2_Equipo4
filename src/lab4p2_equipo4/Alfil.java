@@ -1,6 +1,18 @@
 package lab4p2_equipo4;
 
-public class Alfil {
+public class Alfil extends Pieza{
+
+    public Alfil(boolean esBlanco, int x, int y, int finalx, int finaly) {
+        super(esBlanco, x, y, finalx, finaly);
+    }
+
+    public Alfil() {
+        super();
+    }
+
+    
+    
+    
 
     public boolean movimiento(int x, int y, int finalx, int finaly, boolean esblanco, Object[][] tablero) {
         boolean temp = true;
