@@ -8,6 +8,7 @@ public class Torre extends Pieza {
         int distanciay = Math.abs(y - finaly);
         if (((Pieza) tablero[finalx][finaly]).getEsBlanco() == esblanco) {
             if (distanciax == x || distanciay == y) {
+                temp = testmiddlepiece(x, y, finalx, finaly, tablero);
             } else {
                 temp = false;
             }
@@ -21,13 +22,13 @@ public class Torre extends Pieza {
     private boolean testmiddlepiece(int x, int y, int finalx, int finaly, Object[][] tablero) {
         boolean temp = true;
         if (x == finalx) {
-            for (int i = y; i <= finaly; i++) {
+            for (int i = y; i < finaly; i++) {
                 if (tablero[i][finaly] instanceof Pieza) {
                     temp = false;
                 }
             }
         } else {
-            for (int i = x; i <= finalx; i++) {
+            for (int i = x; i < finalx; i++) {
                 if (tablero[i][finaly] instanceof Pieza) {
                     temp = false;
                 }
