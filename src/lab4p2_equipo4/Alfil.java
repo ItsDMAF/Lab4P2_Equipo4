@@ -6,10 +6,11 @@ public class Alfil {
         boolean temp = true;
         int xdistancia = Math.abs(x - finalx);
         int ydistancia = Math.abs(y - finaly);
+        if (tablero[finalx][finaly].getEsBlanco == esblanco) {
         if (xdistancia == ydistancia) {
-            return temp;
-        } else {
-            return temp = false;
+            
+        }
+        } 
         }
     }
 }

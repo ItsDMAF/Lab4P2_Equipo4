@@ -16,7 +16,7 @@ public class Pieza {
     public Pieza() {
     }
 
-    public boolean isEsBlanco() {
+    public boolean getEsBlanco() {
         return esBlanco;
     }
 
