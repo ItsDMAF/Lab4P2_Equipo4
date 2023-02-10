@@ -68,11 +68,21 @@ public class Lab4P2_Equipo4 {
             Rey R = new Rey(true, 4, 0, 0, 0);
             tablero[4][0] = R;
         }
+        {
+            Rey R = new Rey(false, 4, 7, 0, 0);
+            tablero[4][7] = R;
+        }
         //reina
         {
-            Rey R = new Rey(true, 4, 0, 0, 0);
-            tablero[4][0] = R;
+            Reina R = new Reina(true, 3, 0, 0, 0);
+            tablero[3][0] = R;
         }
+        {
+            Reina R = new Reina(false, 3, 7, 0, 0);
+            tablero[3][7] = R;
+        }
+
+        //peones
         for (int i = 0; i <= 7; i++) {
             {
                 Peon P = new Peon(true, i, 1, 0, 0);
