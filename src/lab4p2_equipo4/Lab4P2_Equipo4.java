@@ -44,7 +44,7 @@ public class Lab4P2_Equipo4 {
             Caballo C = new Caballo(false, 6, 7, 0, 0);
             tablero[6][7] = C;
         }
-        
+
         //alfil
         {
             Alfil A = new Alfil(true, 2, 0, 0, 0);
@@ -62,11 +62,28 @@ public class Lab4P2_Equipo4 {
             Alfil A = new Alfil(false, 5, 7, 0, 0);
             tablero[5][7] = A;
         }
-        
+
         //rey
         {
             Rey R = new Rey(true, 4, 0, 0, 0);
             tablero[4][0] = R;
+        }
+        //reina
+        {
+            Rey R = new Rey(true, 4, 0, 0, 0);
+            tablero[4][0] = R;
+        }
+        for (int i = 0; i <= 7; i++) {
+            {
+                Peon P = new Peon(true, i, 1, 0, 0);
+                tablero[i][1] = P;
+
+            }
+            {
+                Peon P = new Peon(true, i, 6, 0, 0);
+                tablero[i][6] = P;
+
+            }
         }
         return tablero;
 
