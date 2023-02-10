@@ -90,7 +90,7 @@ public class Lab4P2_Equipo4 {
 
             }
             {
-                Peon P = new Peon(true, i, 6, 0, 0);
+                Peon P = new Peon(false, i, 6, 0, 0);
                 tablero[i][6] = P;
 
             }
