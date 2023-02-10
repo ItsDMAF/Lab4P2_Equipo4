@@ -13,14 +13,15 @@ public class Peon extends Pieza {
     
 
     public boolean movimiento(int x, int y, int finalx, int finaly, boolean esblanco){
-        if(y == 1 && esblanco == true){
+        if(y == 1 && esblanco == true){//PEONES BLANCOS
             
         }
-        if (y == 6 && esblanco == false ) {
+        if (y == 6 && esblanco == false ) {//PEONES NEGROS
             
         }
-        if (y != 1  && esblanco == true || y != 6 && esblanco == false) {
+        if (y != 1  && esblanco == true || y != 6 && esblanco == false) {//Proximos movimientos
             
         }
+     
     }
 }
