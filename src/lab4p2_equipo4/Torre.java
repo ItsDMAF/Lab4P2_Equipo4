@@ -2,6 +2,15 @@ package lab4p2_equipo4;
 
 public class Torre extends Pieza {
 
+    public Torre(boolean esBlanco, int x, int y, int finalx, int finaly) {
+        super(esBlanco, x, y, finalx, finaly);
+    }
+
+    public Torre() {
+        super();
+    }
+    
+
     public boolean movimiento(int x, int y, int finalx, int finaly, boolean esblanco, Object[][] tablero) {
         boolean temp = true;
         int distanciax = Math.abs(x - finalx);
@@ -20,20 +29,19 @@ public class Torre extends Pieza {
     }
 
     private boolean testmiddlepiece(int x, int y, int finalx, int finaly, Object[][] tablero) {
-        boolean temp = true;
         if (x == finalx) {
             for (int i = y; i < finaly; i++) {
                 if (tablero[i][finaly] instanceof Pieza) {
-                    temp = false;
+                    return false;
                 }
             }
         } else {
             for (int i = x; i < finalx; i++) {
                 if (tablero[i][finaly] instanceof Pieza) {
-                    temp = false;
+                    return false;
                 }
             }
         }
-        return temp;
+        return true;
     }
 }
