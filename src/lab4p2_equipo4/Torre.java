@@ -9,7 +9,6 @@ public class Torre extends Pieza {
     public Torre() {
         super();
     }
-    
 
     public boolean movimiento(int x, int y, int finalx, int finaly, boolean esblanco, Object[][] tablero) {
         boolean temp = true;
@@ -44,4 +43,14 @@ public class Torre extends Pieza {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        if (super.esBlanco) {
+            return "T";
+        } else {
+            return "t";
+        }
+    }
+
 }

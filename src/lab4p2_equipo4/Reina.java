@@ -11,26 +11,20 @@ public class Reina extends Pieza {
     }
 
     public boolean movimiento(int x, int y, int finalx, int finaly, boolean esblanco, Object[][] tablero) {
-        boolean temp = true;
+        boolean temp = false;
         int distanciax = Math.abs(x - finalx);
         int distanciay = Math.abs(y - finaly);
         //movimiento de torre
         if (((Pieza) tablero[finalx][finaly]).getEsBlanco() == esblanco) {
             if (distanciax == x || distanciay == y) {
                 temp = testmiddlepiece(x, y, finalx, finaly, tablero);
-            } else {
-                temp = false;
             }
         }
         //movimiento de arfil
         if (((Pieza) tablero[finalx][finaly]).getEsBlanco() == esblanco) {
             if (distanciax == distanciay) {
                 temp = testmiddlepieceA(x, y, finalx, finaly, tablero);
-            } else {
-                temp = false;
             }
-        } else {
-            temp = false;
         }
 
         return temp;
@@ -92,5 +86,12 @@ public class Reina extends Pieza {
         }
 
         return temp;
+    }
+    public String toString() {
+        if (super.esBlanco) {
+            return "Q";
+        } else {
+            return "q";
+        }
     }
 }

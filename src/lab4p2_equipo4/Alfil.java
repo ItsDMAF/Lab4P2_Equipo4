@@ -1,6 +1,6 @@
 package lab4p2_equipo4;
 
-public class Alfil extends Pieza{
+public class Alfil extends Pieza {
 
     public Alfil(boolean esBlanco, int x, int y, int finalx, int finaly) {
         super(esBlanco, x, y, finalx, finaly);
@@ -10,17 +10,13 @@ public class Alfil extends Pieza{
         super();
     }
 
-    
-    
-    
-
     public boolean movimiento(int x, int y, int finalx, int finaly, boolean esblanco, Object[][] tablero) {
         boolean temp = true;
         int xdistancia = Math.abs(x - finalx);
         int ydistancia = Math.abs(y - finaly);
         if (((Pieza) tablero[finalx][finaly]).getEsBlanco() == esblanco) {
             if (xdistancia == ydistancia) {
-                temp=testmiddlepiece(x, y, finalx, finaly, tablero);
+                temp = testmiddlepiece(x, y, finalx, finaly, tablero);
             } else {
                 temp = false;
             }
@@ -70,4 +66,14 @@ public class Alfil extends Pieza{
 
         return temp;
     }
+
+    @Override
+    public String toString() {
+        if (super.esBlanco) {
+            return "B";
+        } else {
+            return "b";
+        }
+    }
+
 }
