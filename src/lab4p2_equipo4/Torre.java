@@ -53,4 +53,13 @@ public class Torre extends Pieza {
         }
     }
 
+    @Override
+    public String getPiece() {
+        if (super.esBlanco) {
+            return "T";
+        } else {
+            return "t";
+        }
+    }
+
 }

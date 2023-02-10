@@ -33,4 +33,14 @@ public class Caballo extends Pieza {
             return "n";
         }
     }
+
+    @Override
+    public String getPiece() {
+        if (super.esBlanco) {
+            return "N";
+        } else {
+            return "n";
+        }
+    }
+
 }

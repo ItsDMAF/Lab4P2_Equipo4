@@ -1,7 +1,7 @@
 
 package lab4p2_equipo4;
 
-public class Pieza {
+public abstract class Pieza {
     protected boolean esBlanco;
     protected int x,y,finalx,finaly;
 
@@ -60,6 +60,7 @@ public class Pieza {
     public String toString() {
         return "Pieza{" + "esBlanco=" + esBlanco + ", x=" + x + ", y=" + y + ", finalx=" + finalx + ", finaly=" + finaly + '}';
     }
+    public abstract String getPiece();
     
     
     

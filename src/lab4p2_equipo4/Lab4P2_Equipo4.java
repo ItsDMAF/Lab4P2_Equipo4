@@ -6,6 +6,7 @@ public class Lab4P2_Equipo4 {
 
         Object[][] tablero = new Object[8][8];
         tablero = arreglartablero(tablero);
+        imprimirposicionblanco(tablero);
 
     }
 
@@ -98,5 +99,24 @@ public class Lab4P2_Equipo4 {
         }
         return tablero;
 
+    }
+
+    public static void imprimirposicionblanco(Object[][] tablero) {
+        System.out.println("-------------------------------");
+        //imprimir id de letras
+        System.out.println("    ");
+        for (int i = 65; i <= 72; i++) {
+            System.out.print(((char) i)+"  ");
+        }
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print(i);
+            for (int j = 0; j < tablero[0].length; j++) {
+                if (tablero[i][j] instanceof Pieza) {
+                    System.out.print("["+((Pieza) tablero[i][j]).getPiece()+"]");
+
+                }
+            }
+            System.out.println();
+        }
     }
 }

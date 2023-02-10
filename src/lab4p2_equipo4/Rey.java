@@ -25,7 +25,17 @@ public class Rey extends Pieza {
 
         return temp;
     }
+
     public String toString() {
+        if (super.esBlanco) {
+            return "K";
+        } else {
+            return "k";
+        }
+    }
+
+    @Override
+    public String getPiece() {
         if (super.esBlanco) {
             return "K";
         } else {

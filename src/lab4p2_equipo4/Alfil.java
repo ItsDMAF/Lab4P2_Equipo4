@@ -76,4 +76,14 @@ public class Alfil extends Pieza {
         }
     }
 
+    @Override
+    public String getPiece() {
+        if (super.esBlanco) {
+            return "B";
+        } else {
+            return "b";
+        }
+    }
+    
+
 }

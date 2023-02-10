@@ -33,4 +33,14 @@ public class Peon extends Pieza {
         }
         return temp;
     }
+
+    @Override
+    public String getPiece() {
+        if (super.esBlanco) {
+            return "P";
+        } else {
+            return "p";
+        }
+    }
+
 }

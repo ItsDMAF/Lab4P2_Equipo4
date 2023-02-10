@@ -94,4 +94,12 @@ public class Reina extends Pieza {
             return "q";
         }
     }
+
+    @Override
+    public String getPiece() {
+if (super.esBlanco) {
+            return "Q";
+        } else {
+            return "q";
+        }    }
 }
