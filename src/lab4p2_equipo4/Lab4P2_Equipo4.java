@@ -5,10 +5,11 @@ public class Lab4P2_Equipo4 {
     public static void main(String[] args) {
 
         Object[][] tablero = new Object[8][8];
+        tablero = arreglartablero(tablero);
 
     }
 
-    public Object[][] arreglartablero(Object[][] tablero) {
+    public static Object[][] arreglartablero(Object[][] tablero) {
         //torres
         {
             Torre T = new Torre(true, 0, 0, 0, 0);
