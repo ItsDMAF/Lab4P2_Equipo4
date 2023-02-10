@@ -40,7 +40,7 @@ public class Reina extends Pieza {
             }
         } else {
             for (int i = x; i < finalx; i++) {
-                if (tablero[i][finaly] instanceof Pieza) {
+                if (tablero[finalx][i] instanceof Pieza) {
                     return false;
                 }
             }

@@ -23,7 +23,6 @@ public class Torre extends Pieza {
         } else {
             temp = false;
         }
-
         return temp;
     }
 
@@ -36,7 +35,7 @@ public class Torre extends Pieza {
             }
         } else {
             for (int i = x; i < finalx; i++) {
-                if (tablero[i][finaly] instanceof Pieza) {
+                if (tablero[finalx][i] instanceof Pieza) {
                     return false;
                 }
             }
