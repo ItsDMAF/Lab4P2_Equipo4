@@ -18,12 +18,20 @@ public class Torre extends Pieza {
         return temp;
     }
 
-    private boolean testmiddlepiece(int x, int y, int finalx, int finaly) {
-        boolean temp=true;
-        if (x != finalx) {
-            
+    private boolean testmiddlepiece(int x, int y, int finalx, int finaly, Object[][] tablero) {
+        boolean temp = true;
+        if (x == finalx) {
+            for (int i = y; i <= finaly; i++) {
+                if (tablero[i][finaly] instanceof Pieza) {
+                    temp = false;
+                }
+            }
         } else {
-
+            for (int i = x; i <= finalx; i++) {
+                if (tablero[i][finaly] instanceof Pieza) {
+                    temp = false;
+                }
+            }
         }
         return temp;
     }
