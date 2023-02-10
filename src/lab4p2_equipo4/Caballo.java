@@ -2,6 +2,14 @@ package lab4p2_equipo4;
 
 public class Caballo extends Pieza {
 
+    public Caballo() {
+            super();
+    }
+
+    public Caballo(boolean esBlanco, int x, int y, int finalx, int finaly) {
+        super(esBlanco, x, y, finalx, finaly);
+    }
+
     public boolean movimiento(int x, int y, int finalx, int finaly, boolean esblanco, Object[][] tablero) {
         boolean temp = true;
         int distanciax = Math.abs(x - finalx);
