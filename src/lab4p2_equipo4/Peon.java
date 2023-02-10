@@ -19,7 +19,7 @@ public class Peon extends Pieza {
         if (y == 6 && esblanco == false ) {
             
         }
-        if (y != 1  && esblaco == true || y != 6 && esblaco == false) {
+        if (y != 1  && esblanco == true || y != 6 && esblanco == false) {
             
         }
     }
