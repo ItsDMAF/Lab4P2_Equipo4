@@ -1,14 +1,33 @@
 package lab4p2_equipo4;
 
+import java.util.Scanner;
+
 public class Lab4P2_Equipo4 {
 
     public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
 
         Object[][] tablero = new Object[8][8];
         tablero = arreglartablero(tablero);
         imprimirPosicionNegro(tablero);
         imprimirposicionBlanca(tablero);
+        boolean win = true;
+        do {
 
+            System.out.print("Ingrese: ");
+
+            String mov = leer.nextLine();
+            String instru[] = mov.split(" - ");
+
+            for (int i = 0; i < instru.length; i++) {
+                if (instru[i].charAt(0)) {
+                    if (instru[i].charAt(0)) {
+
+                    }
+                }
+            }
+
+        } while (win);
     }
 
     public static Object[][] arreglartablero(Object[][] tablero) {

@@ -45,99 +45,137 @@ public class Rey extends Pieza {
 
     public boolean jaque(Object[][] tablero) {
         boolean temp = false;
-        int distanciax = Math.abs(x - finalx);
-        int distanciay = Math.abs(y - finaly);
-        if (x == finalx) {
-            for (int i = y; i < finaly; i++) {
-                if (tablero[i][finaly] instanceof Pieza) {
-                    if (tablero[i][finaly] instanceof Torre && esBlanco != esBlanco || tablero[i][finaly] instanceof Reina && esBlanco != esBlanco) {
-                        temp = true;
+        try {
+            for (int i = 0; i < 8; i++) {
+                if (tablero[i][y] instanceof Pieza) {
+                    if (tablero[i][y] instanceof Torre && esBlanco != esBlanco || tablero[i][y] instanceof Reina && esBlanco != esBlanco) {
+                        temp = ((Pieza) tablero[i][y]).movimiento(finalx, finaly, i, y, esBlanco, tablero);
                     } else {
                         break;
                     }
                 }
             }
-        } else {
-            for (int i = x; i < finalx; i++) {
-                if (tablero[i][finaly] instanceof Pieza && esBlanco != esBlanco || tablero[i][finaly] instanceof Reina) {
-                    if (tablero[i][finaly] instanceof Torre) {
-                        temp = true;
+        } catch (Exception e) {
+        }
+
+        for (int i = 0; i < 8; i++) {
+            try {
+                if (tablero[x][i] instanceof Pieza && esBlanco != esBlanco || tablero[x][i] instanceof Reina) {
+                    if (tablero[x][i] instanceof Torre) {
+                        temp = ((Pieza) tablero[i][y]).movimiento(finalx, finaly, x, i, esBlanco, tablero);
                     } else {
                         break;
                     }
                 }
+            } catch (Exception e) {
             }
         }
 
         //-----------------------------
         //Arfill
-        if (finalx < x) { //x --
-            if (finaly > x) {//y ++
-                for (int i = x - 1, j = y + 1; i < finalx; i--, j++) {
-                    if (tablero[i][j] instanceof Pieza) {
-                        if (tablero[i][j] instanceof Alfil || tablero[i][j] instanceof Reina) {
-                            temp = true;
+        try {
+            for (int i = x; i < 10; i++) {
+                for (int j = y; j < 10; j++) {
+                    if (tablero[i][j] instanceof Pieza && esBlanco != esBlanco || tablero[i][j] instanceof Reina) {
+                        if (tablero[i][j] instanceof Alfil) {
+                            temp = ((Pieza) tablero[i][j]).movimiento(i, j, x, y, esBlanco, tablero);
                         } else {
                             break;
                         }
                     }
                 }
-            } else {//y --
-                for (int i = x - 1, j = y - 1; i < finalx; i--, j--) {
-                    if (tablero[i][j] instanceof Pieza) {
-                        if (tablero[i][j] instanceof Alfil || tablero[i][j] instanceof Reina) {
-                            temp = true;
-                        } else {
-                            break;
-                        }
-                    }
-                }
-
             }
-
+        } catch (Exception e) {
         }
-        if (finalx > x) {//x ++
-            if (finaly > x) {//y ++
-                for (int i = x + 1, j = y + 1; i < finalx; i++, j++) {
-                    if (tablero[i][j] instanceof Pieza) {
-                        if (tablero[i][j] instanceof Alfil || tablero[i][j] instanceof Reina) {
-                            temp = true;
+        try {
+            for (int i = x; i < 10; i++) {
+                for (int j = y; j < 10; j--) {
+                    if (tablero[i][j] instanceof Pieza && esBlanco != esBlanco || tablero[i][j] instanceof Reina) {
+                        if (tablero[i][j] instanceof Alfil) {
+                            temp = ((Pieza) tablero[i][j]).movimiento(i, j, x, y, esBlanco, tablero);
                         } else {
                             break;
                         }
                     }
                 }
-
-            } else {//y --
-                for (int i = x + 1, j = y - 1; i < finalx; i++, j--) {
-                    if (tablero[i][j] instanceof Pieza) {
-                        if (tablero[i][j] instanceof Alfil || tablero[i][j] instanceof Reina) {
-                            temp = true;
-                        } else {
-                            break;
-                        }
-                    }
-                }
-
             }
+        } catch (Exception e) {
+        }
+        try {
+            for (int i = x; i < 10; i--) {
+                for (int j = y; j < 10; j++) {
+                    if (tablero[i][j] instanceof Pieza && esBlanco != esBlanco || tablero[i][j] instanceof Reina) {
+                        if (tablero[i][j] instanceof Alfil) {
+                            temp = ((Pieza) tablero[i][j]).movimiento(i, j, x, y, esBlanco, tablero);
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+        }
+        try {
+            for (int i = x; i < 10; i--) {
+                for (int j = y; j < 10; j--) {
+                    if (tablero[i][j] instanceof Pieza && esBlanco != esBlanco || tablero[i][j] instanceof Reina) {
+                        if (tablero[i][j] instanceof Alfil) {
+                            temp = ((Pieza) tablero[i][j]).movimiento(i, j, x, y, esBlanco, tablero);
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
         }
         //------------------------------------------------------
-        if (esBlanco == false && tablero[x - 1][y - 1] instanceof Peon || tablero[x - 1][y + 1] instanceof Peon && esBlanco == false) {//Comer lado blanco
-            temp = true;
+        //peon
+        if (esBlanco == true) {//Comer lado blanco
+            if (tablero[x - 1][y + 1] instanceof Peon || tablero[x + 1][y + 1] instanceof Peon) {
+                temp = true;
+            }
 
         }
-        if (esBlanco == true && finaly == y + 1) {//Comer lado negro
-            temp = true;
+        if (esBlanco == false) {//Comer lado negro
+            if (tablero[x - 1][y - 1] instanceof Peon || tablero[x + 1][y - 1] instanceof Peon) {
+                temp = true;
+            }
 
         }
         //----------------------------------
-        if (((Pieza) tablero[finalx][finaly]).getEsBlanco() == esBlanco) {
-            if (distanciax == 1 && distanciay == 2 && tablero[finalx][finaly] instanceof Caballo || distanciax == 2 && distanciay == 1 && tablero[finalx][finaly] instanceof Caballo) {
-            } else {
-                temp = false;
-            }
-        } else {
-            temp = false;
+        //caballo
+        try {
+            temp = tablero[x + 1][y + 2] instanceof Caballo || esBlanco != ((Pieza) tablero[x + 1][y + 2]).getEsBlanco();
+        } catch (Exception e) {
+        }
+        try {
+            temp = tablero[x + 1][y - 2] instanceof Caballo || esBlanco != ((Pieza) tablero[x + 1][y - 2]).getEsBlanco();
+        } catch (Exception e) {
+        }
+        try {
+            temp = tablero[x - 1][y + 2] instanceof Caballo || esBlanco != ((Pieza) tablero[x - 1][y + 2]).getEsBlanco();
+        } catch (Exception e) {
+        }
+        try {
+            temp = tablero[x - 1][y - 2] instanceof Caballo || esBlanco != ((Pieza) tablero[x - 1][y - 2]).getEsBlanco();
+        } catch (Exception e) {
+        }
+        try {
+            temp = tablero[x + 2][y + 1] instanceof Caballo || esBlanco != ((Pieza) tablero[x + 2][y + 1]).getEsBlanco();
+        } catch (Exception e) {
+        }
+        try {
+            temp = tablero[x + 2][y - 1] instanceof Caballo || esBlanco != ((Pieza) tablero[x + 2][y - 1]).getEsBlanco();
+        } catch (Exception e) {
+        }
+        try {
+            temp = tablero[x - 2][y + 1] instanceof Caballo || esBlanco != ((Pieza) tablero[x - 2][y + 1]).getEsBlanco();
+        } catch (Exception e) {
+        }
+        try {
+            temp = tablero[x - 2][y - 1] instanceof Caballo || esBlanco != ((Pieza) tablero[x - 2][y - 1]).getEsBlanco();
+        } catch (Exception e) {
         }
 
         return temp;
