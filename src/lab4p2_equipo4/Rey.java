@@ -44,19 +44,28 @@ public class Rey extends Pieza {
     }
 
     public boolean jaque(Object[][] tablero) {
+        boolean temp = false;
         if (x == finalx) {
             for (int i = y; i < finaly; i++) {
                 if (tablero[i][finaly] instanceof Pieza) {
-                    return false;
+                    if (tablero[i][finaly] instanceof Torre) {
+                        temp = true;
+                    } else {
+                        break;
+                    }
                 }
             }
         } else {
             for (int i = x; i < finalx; i++) {
                 if (tablero[i][finaly] instanceof Pieza) {
-                    return false;
+                    if (tablero[i][finaly] instanceof Torre) {
+                        temp = true;
+                    } else {
+                        break;
+                    }
                 }
             }
         }
-        return true;
+        return temp;
     }
 }
