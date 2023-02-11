@@ -1,9 +1,9 @@
-
 package lab4p2_equipo4;
 
 public abstract class Pieza {
+
     protected boolean esBlanco;
-    protected int x,y,finalx,finaly;
+    protected int x, y, finalx, finaly;
 
     public Pieza(boolean esBlanco, int x, int y, int finalx, int finaly) {
         this.esBlanco = esBlanco;
@@ -60,8 +60,9 @@ public abstract class Pieza {
     public String toString() {
         return "Pieza{" + "esBlanco=" + esBlanco + ", x=" + x + ", y=" + y + ", finalx=" + finalx + ", finaly=" + finaly + '}';
     }
+
     public abstract String getPiece();
-    
-    
-    
+
+    public abstract boolean movimiento(int x, int y, int finalx, int finaly, boolean esblanco, Object[][] tablero);
+
 }
