@@ -24,6 +24,13 @@ public class Lab4P2_Equipo4 {
             instr = mov.split("\\|");
 
             String instru[] = instr[1].split("-");
+            int punto1x = ((int) instru[0].charAt(0)) - 96;
+            int punto1y = Integer.parseInt(String.valueOf(instru[0].charAt(1)));
+            int punto2x = ((int) instru[1].charAt(0)) - 96;
+            int punto2y = Integer.parseInt(String.valueOf(instru[1].charAt(1)));
+            
+            //ahora aqui falta la jugabilidad
+            
             System.out.println("Lamentablemente la jugabilidad no esta disponible aun");
 
         } while (win);
