@@ -43,7 +43,7 @@ public class Rey extends Pieza {
         }
     }
 
-    public boolean jaque(Object[][] tablero) {
+    public boolean jaque(Object[][] tablero, int x, int y) {
         boolean temp = false;
         try {
             for (int i = 0; i < 8; i++) {
@@ -176,6 +176,57 @@ public class Rey extends Pieza {
         try {
             temp = tablero[x - 2][y - 1] instanceof Caballo || esBlanco != ((Pieza) tablero[x - 2][y - 1]).getEsBlanco();
         } catch (Exception e) {
+        }
+
+        return temp;
+    }
+
+    public boolean jaquemate(Object[][] tablero) {
+        boolean temp = false;
+        try {
+            temp = jaque(tablero, x - 1, y - 1);
+        } catch (Exception e) {
+
+        }
+        try {
+            temp = jaque(tablero, x - 1, y);
+        } catch (Exception e) {
+
+        }
+        try {
+            temp = jaque(tablero, x - 1, y + 1);
+        } catch (Exception e) {
+
+        }
+        try {
+            temp = jaque(tablero, x, y - 1);
+        } catch (Exception e) {
+
+        }
+        try {
+            temp = jaque(tablero, x, y);
+        } catch (Exception e) {
+
+        }
+        try {
+            temp = jaque(tablero, x, y + 1);
+        } catch (Exception e) {
+
+        }
+        try {
+            temp = jaque(tablero, x + 1, y - 1);
+        } catch (Exception e) {
+
+        }
+        try {
+            temp = jaque(tablero, x + 1, y);
+        } catch (Exception e) {
+
+        }
+        try {
+            temp = jaque(tablero, x + 1, y + 1);
+        } catch (Exception e) {
+
         }
 
         return temp;
