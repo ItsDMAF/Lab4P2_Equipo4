@@ -12,20 +12,19 @@ public class Lab4P2_Equipo4 {
         imprimirPosicionNegro(tablero);
         imprimirposicionBlanca(tablero);
         boolean win = true;
+        System.out.println("Ingrese el nombre del jugador 1: ");
+        leer.next();//si se que no se guarda el nombre, es a proposito
+        System.out.println("Ingrese el nombre del jugador 2: ");
+        leer.next();//si se que no se guarda el nombre, es a proposito
         do {
+            System.out.print("Ingrese el commando: ");
 
-            System.out.print("Ingrese: ");
+            String mov = leer.next();
+            String[] instr = new String[2];
+            instr = mov.split("\\|");
 
-            String mov = leer.nextLine();
-            String instru[] = mov.split(" - ");
-
-            for (int i = 0; i < instru.length; i++) {
-                if (instru[i].charAt(0)) {
-                    if (instru[i].charAt(0)) {
-
-                    }
-                }
-            }
+            String instru[] = instr[1].split("-");
+            System.out.println("Lamentablemente la jugabilidad no esta disponible aun");
 
         } while (win);
     }
