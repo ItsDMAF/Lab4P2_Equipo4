@@ -66,6 +66,9 @@ public class Rey extends Pieza {
                 }
             }
         }
+        
+        //-----------------------------
+        //
         return temp;
     }
 }
