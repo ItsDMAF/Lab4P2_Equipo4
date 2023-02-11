@@ -73,7 +73,7 @@ public class Rey extends Pieza {
             if (finaly > x) {//y ++
                 for (int i = x - 1, j = y + 1; i < finalx; i--, j++) {
                     if (tablero[i][j] instanceof Pieza) {
-                        if (tablero[i][j] instanceof Torre || tablero[i][j] instanceof Reina) {
+                        if (tablero[i][j] instanceof Alfil || tablero[i][j] instanceof Reina) {
                             temp = true;
                         } else {
                             break;
@@ -83,7 +83,7 @@ public class Rey extends Pieza {
             } else {//y --
                 for (int i = x - 1, j = y - 1; i < finalx; i--, j--) {
                     if (tablero[i][j] instanceof Pieza) {
-                        if (tablero[i][j] instanceof Torre || tablero[i][j] instanceof Reina) {
+                        if (tablero[i][j] instanceof Alfil || tablero[i][j] instanceof Reina) {
                             temp = true;
                         } else {
                             break;
@@ -98,7 +98,7 @@ public class Rey extends Pieza {
             if (finaly > x) {//y ++
                 for (int i = x + 1, j = y + 1; i < finalx; i++, j++) {
                     if (tablero[i][j] instanceof Pieza) {
-                        if (tablero[i][j] instanceof Torre || tablero[i][j] instanceof Reina) {
+                        if (tablero[i][j] instanceof Alfil || tablero[i][j] instanceof Reina) {
                             temp = true;
                         } else {
                             break;
@@ -109,7 +109,7 @@ public class Rey extends Pieza {
             } else {//y --
                 for (int i = x + 1, j = y - 1; i < finalx; i++, j--) {
                     if (tablero[i][j] instanceof Pieza) {
-                        if (tablero[i][j] instanceof Torre || tablero[i][j] instanceof Reina) {
+                        if (tablero[i][j] instanceof Alfil || tablero[i][j] instanceof Reina) {
                             temp = true;
                         } else {
                             break;
