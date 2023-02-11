@@ -45,6 +45,8 @@ public class Rey extends Pieza {
 
     public boolean jaque(Object[][] tablero) {
         boolean temp = false;
+        int distanciax = Math.abs(x - finalx);
+        int distanciay = Math.abs(y - finaly);
         if (x == finalx) {
             for (int i = y; i < finaly; i++) {
                 if (tablero[i][finaly] instanceof Pieza) {
@@ -119,6 +121,25 @@ public class Rey extends Pieza {
 
             }
         }
+        //------------------------------------------------------
+        if (esBlanco == false && tablero[x - 1][y - 1] instanceof Peon || tablero[x - 1][y + 1] instanceof Peon && esBlanco == false) {//Comer lado blanco
+            temp = true;
+
+        }
+        if (esBlanco == true && finaly == y + 1) {//Comer lado negro
+            temp = true;
+
+        }
+        //----------------------------------
+        if (((Pieza) tablero[finalx][finaly]).getEsBlanco() == esBlanco) {
+            if (distanciax == 1 && distanciay == 2 && tablero[finalx][finaly] instanceof Caballo || distanciax == 2 && distanciay == 1 && tablero[finalx][finaly] instanceof Caballo) {
+            } else {
+                temp = false;
+            }
+        } else {
+            temp = false;
+        }
+
         return temp;
     }
 }
