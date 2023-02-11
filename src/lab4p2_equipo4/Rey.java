@@ -48,7 +48,7 @@ public class Rey extends Pieza {
         if (x == finalx) {
             for (int i = y; i < finaly; i++) {
                 if (tablero[i][finaly] instanceof Pieza) {
-                    if (tablero[i][finaly] instanceof Torre) {
+                    if (tablero[i][finaly] instanceof Torre && esBlanco != esBlanco || tablero[i][finaly] instanceof Reina && esBlanco != esBlanco) {
                         temp = true;
                     } else {
                         break;
@@ -57,7 +57,7 @@ public class Rey extends Pieza {
             }
         } else {
             for (int i = x; i < finalx; i++) {
-                if (tablero[i][finaly] instanceof Pieza) {
+                if (tablero[i][finaly] instanceof Pieza && esBlanco != esBlanco || tablero[i][finaly] instanceof Reina) {
                     if (tablero[i][finaly] instanceof Torre) {
                         temp = true;
                     } else {
@@ -66,9 +66,59 @@ public class Rey extends Pieza {
                 }
             }
         }
-        
+
         //-----------------------------
-        //
+        //Arfill
+        if (finalx < x) { //x --
+            if (finaly > x) {//y ++
+                for (int i = x - 1, j = y + 1; i < finalx; i--, j++) {
+                    if (tablero[i][j] instanceof Pieza) {
+                        if (tablero[i][j] instanceof Torre || tablero[i][j] instanceof Reina) {
+                            temp = true;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            } else {//y --
+                for (int i = x - 1, j = y - 1; i < finalx; i--, j--) {
+                    if (tablero[i][j] instanceof Pieza) {
+                        if (tablero[i][j] instanceof Torre || tablero[i][j] instanceof Reina) {
+                            temp = true;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+
+            }
+
+        }
+        if (finalx > x) {//x ++
+            if (finaly > x) {//y ++
+                for (int i = x + 1, j = y + 1; i < finalx; i++, j++) {
+                    if (tablero[i][j] instanceof Pieza) {
+                        if (tablero[i][j] instanceof Torre || tablero[i][j] instanceof Reina) {
+                            temp = true;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+
+            } else {//y --
+                for (int i = x + 1, j = y - 1; i < finalx; i++, j--) {
+                    if (tablero[i][j] instanceof Pieza) {
+                        if (tablero[i][j] instanceof Torre || tablero[i][j] instanceof Reina) {
+                            temp = true;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+
+            }
+        }
         return temp;
     }
 }

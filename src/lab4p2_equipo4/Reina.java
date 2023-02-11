@@ -43,7 +43,7 @@ public class Reina extends Pieza {
                 if (tablero[finalx][i] instanceof Pieza) {
                     return false;
                 }
-            } 
+            }
         }
         return true;
     }
